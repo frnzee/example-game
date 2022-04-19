@@ -174,15 +174,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1369351303162969600, guid: 8bfcde4e654484438ae3c135bca16ad3, type: 3}
       propertyPath: m_Name
-      value: Button exp
+      value: exp
       objectReference: {fileID: 0}
     - target: {fileID: 1369351303162969613, guid: 8bfcde4e654484438ae3c135bca16ad3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1361416197}
+      objectReference: {fileID: 1654824686}
     - target: {fileID: 1369351303162969613, guid: 8bfcde4e654484438ae3c135bca16ad3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Exponenciate
+      value: Click
+      objectReference: {fileID: 0}
+    - target: {fileID: 1369351303162969613, guid: 8bfcde4e654484438ae3c135bca16ad3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: buttonClick, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 1369351303162969615, guid: 8bfcde4e654484438ae3c135bca16ad3, type: 3}
       propertyPath: m_Pivot.x
@@ -404,15 +408,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1369351303162969600, guid: 8bfcde4e654484438ae3c135bca16ad3, type: 3}
       propertyPath: m_Name
-      value: Button Multiply
+      value: '*'
       objectReference: {fileID: 0}
     - target: {fileID: 1369351303162969613, guid: 8bfcde4e654484438ae3c135bca16ad3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1361416197}
+      objectReference: {fileID: 1654824686}
     - target: {fileID: 1369351303162969613, guid: 8bfcde4e654484438ae3c135bca16ad3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Multiply
+      value: Click
+      objectReference: {fileID: 0}
+    - target: {fileID: 1369351303162969613, guid: 8bfcde4e654484438ae3c135bca16ad3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: buttonClick, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 1369351303162969615, guid: 8bfcde4e654484438ae3c135bca16ad3, type: 3}
       propertyPath: m_Pivot.x
@@ -518,15 +526,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1369351303162969600, guid: 8bfcde4e654484438ae3c135bca16ad3, type: 3}
       propertyPath: m_Name
-      value: Button min
+      value: min
       objectReference: {fileID: 0}
     - target: {fileID: 1369351303162969613, guid: 8bfcde4e654484438ae3c135bca16ad3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1361416197}
+      objectReference: {fileID: 1654824686}
     - target: {fileID: 1369351303162969613, guid: 8bfcde4e654484438ae3c135bca16ad3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: FindMin
+      value: Click
+      objectReference: {fileID: 0}
+    - target: {fileID: 1369351303162969613, guid: 8bfcde4e654484438ae3c135bca16ad3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: buttonClick, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 1369351303162969615, guid: 8bfcde4e654484438ae3c135bca16ad3, type: 3}
       propertyPath: m_Pivot.x
@@ -632,15 +644,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1369351303162969600, guid: 8bfcde4e654484438ae3c135bca16ad3, type: 3}
       propertyPath: m_Name
-      value: Button Divide
+      value: /
       objectReference: {fileID: 0}
     - target: {fileID: 1369351303162969613, guid: 8bfcde4e654484438ae3c135bca16ad3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1361416197}
+      objectReference: {fileID: 1654824686}
     - target: {fileID: 1369351303162969613, guid: 8bfcde4e654484438ae3c135bca16ad3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Divide
+      value: Click
+      objectReference: {fileID: 0}
+    - target: {fileID: 1369351303162969613, guid: 8bfcde4e654484438ae3c135bca16ad3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: buttonClick, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 1369351303162969615, guid: 8bfcde4e654484438ae3c135bca16ad3, type: 3}
       propertyPath: m_Pivot.x
@@ -1279,7 +1295,7 @@ MonoBehaviour:
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 0
+    m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Result
@@ -1504,7 +1520,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 763435586}
-  - {fileID: 1361416196}
+  - {fileID: 1654824685}
   - {fileID: 324791994}
   - {fileID: 81411480}
   - {fileID: 1336923481}
@@ -1516,57 +1532,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!1 &1361416195
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1361416196}
-  - component: {fileID: 1361416197}
-  m_Layer: 5
-  m_Name: Calculator
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1361416196
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1361416195}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1359166548}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1361416197
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1361416195}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d681192ebc9d5492194d44364de4d8d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Result: {fileID: 1323352958}
-  textField1: {fileID: 1830183250}
-  textField2: {fileID: 1760544278}
 --- !u!1 &1409668608
 GameObject:
   m_ObjectHideFlags: 0
@@ -1651,6 +1616,57 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1369351303162969615, guid: 8bfcde4e654484438ae3c135bca16ad3, type: 3}
   m_PrefabInstance: {fileID: 1369351302264135415}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1654824684
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1654824685}
+  - component: {fileID: 1654824686}
+  m_Layer: 5
+  m_Name: Script
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1654824685
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1654824684}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1359166548}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1654824686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1654824684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a3456d3d4c654a7e9ee61bf757fbf9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textField1: {fileID: 1830183250}
+  textField2: {fileID: 1760544278}
+  result: {fileID: 1323352958}
 --- !u!1 &1760544275
 GameObject:
   m_ObjectHideFlags: 0
@@ -1946,15 +1962,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1369351303162969600, guid: 8bfcde4e654484438ae3c135bca16ad3, type: 3}
       propertyPath: m_Name
-      value: Button max
+      value: max
       objectReference: {fileID: 0}
     - target: {fileID: 1369351303162969613, guid: 8bfcde4e654484438ae3c135bca16ad3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1361416197}
+      objectReference: {fileID: 1654824686}
     - target: {fileID: 1369351303162969613, guid: 8bfcde4e654484438ae3c135bca16ad3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: FindMax
+      value: Click
+      objectReference: {fileID: 0}
+    - target: {fileID: 1369351303162969613, guid: 8bfcde4e654484438ae3c135bca16ad3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: buttonClick, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 1369351303162969615, guid: 8bfcde4e654484438ae3c135bca16ad3, type: 3}
       propertyPath: m_Pivot.x
@@ -2060,15 +2080,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1369351303162969600, guid: 8bfcde4e654484438ae3c135bca16ad3, type: 3}
       propertyPath: m_Name
-      value: Button Minus
+      value: '-'
       objectReference: {fileID: 0}
     - target: {fileID: 1369351303162969613, guid: 8bfcde4e654484438ae3c135bca16ad3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1361416197}
+      objectReference: {fileID: 1654824686}
     - target: {fileID: 1369351303162969613, guid: 8bfcde4e654484438ae3c135bca16ad3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Minus
+      value: Click
+      objectReference: {fileID: 0}
+    - target: {fileID: 1369351303162969613, guid: 8bfcde4e654484438ae3c135bca16ad3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: buttonClick, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 1369351303162969615, guid: 8bfcde4e654484438ae3c135bca16ad3, type: 3}
       propertyPath: m_Pivot.x
@@ -2178,15 +2202,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1369351303162969600, guid: 8bfcde4e654484438ae3c135bca16ad3, type: 3}
       propertyPath: m_Name
-      value: Button Plus
+      value: +
       objectReference: {fileID: 0}
     - target: {fileID: 1369351303162969613, guid: 8bfcde4e654484438ae3c135bca16ad3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1361416197}
+      objectReference: {fileID: 1654824686}
     - target: {fileID: 1369351303162969613, guid: 8bfcde4e654484438ae3c135bca16ad3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Plus
+      value: Click
+      objectReference: {fileID: 0}
+    - target: {fileID: 1369351303162969613, guid: 8bfcde4e654484438ae3c135bca16ad3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: buttonClick, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 1369351303162969615, guid: 8bfcde4e654484438ae3c135bca16ad3, type: 3}
       propertyPath: m_Pivot.x
