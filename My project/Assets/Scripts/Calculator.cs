@@ -8,146 +8,102 @@ public class Calculator : MonoBehaviour
     public Text Result;
     public InputField textField1;
     public InputField textField2;
-    float value1;
-    float value2;
-    float resultvalue;
-    public void Plus()
+    private float _value1;
+    private float _value2;
+    public void Addition()
     {
-        if (string.IsNullOrEmpty(textField1.text))
+        if (string.IsNullOrEmpty(textField1.text) || string.IsNullOrEmpty(textField2.text))
+        
         {
-            Result.text = "Empty field 1";
-        }
-        else if (string.IsNullOrEmpty(textField2.text))
-        {
-            Result.text = "Empty field 2";
+            Result.text = "Empty field";
         }
         else
         {
-            float.TryParse(textField1.text, out value1);
-            float.TryParse(textField2.text, out value2);
-            resultvalue = value1 + value2;
-            Result.text = resultvalue.ToString("");
+            _value1 = float.Parse(textField1.text);
+            _value2 = float.Parse(textField2.text);
+            Result.text = (_value1 + _value2).ToString("");
         }
     }
-    public void Minus()
+    public void Substraction()
     {
-        if (string.IsNullOrEmpty(textField1.text))
+        if (string.IsNullOrEmpty(textField1.text) || string.IsNullOrEmpty(textField2.text))
         {
-            Result.text = "Empty field 1";
-        }
-        else if (string.IsNullOrEmpty(textField2.text))
-        {
-            Result.text = "Empty field 2";
+            Result.text = "Empty field";
         }
         else
         {
-            float.TryParse(textField1.text, out value1);
-            float.TryParse(textField2.text, out value2);
-            resultvalue = value1 - value2;
-            Result.text = resultvalue.ToString("");
+            _value1 = float.Parse(textField1.text);
+            _value2 = float.Parse(textField2.text);
+            Result.text = (_value1 - _value2).ToString("");
         }
     }
-    public void Multiply()
+    public void Multiplication()
     {
-        if (string.IsNullOrEmpty(textField1.text))
+        if (string.IsNullOrEmpty(textField1.text) || string.IsNullOrEmpty(textField2.text))
         {
-            Result.text = "Empty field 1";
-        }
-        else if (string.IsNullOrEmpty(textField2.text))
-        {
-            Result.text = "Empty field 2";
+            Result.text = "Empty field";
         }
         else
         {
-            float.TryParse(textField1.text, out value1);
-            float.TryParse(textField2.text, out value2);
-            resultvalue = value1 * value2;
-            Result.text = resultvalue.ToString("");
+            _value1 = float.Parse(textField1.text);
+            _value2 = float.Parse(textField2.text);
+            Result.text = (_value1 * _value2).ToString("");
         }
     }
-    public void Divide()
+    public void Division()
     {
-        if (string.IsNullOrEmpty(textField1.text))
+        if (string.IsNullOrEmpty(textField1.text) || string.IsNullOrEmpty(textField2.text))
         {
-            Result.text = "Empty field 1";
+            Result.text = "Empty field";
         }
-        else if (string.IsNullOrEmpty(textField2.text))
-        {
-            Result.text = "Empty field 2";
-        }
-        else if (value2==0)
+        else if (_value2 == 0)
         {
             Result.text = "Can't divide by 0";
         }
         else
         {
-            float.TryParse(textField1.text, out value1);
-            float.TryParse(textField2.text, out value2);
-            resultvalue = value1 / value2;
-            Result.text = resultvalue.ToString("");
-        }        
+            _value1 = float.Parse(textField1.text);
+            _value2 = float.Parse(textField2.text);
+            Result.text = (_value1 / _value2).ToString("");
+        }
     }
     public void FindMin()
     {
-        float.TryParse(textField1.text, out value1);
-        float.TryParse(textField2.text, out value2);
-        if (string.IsNullOrEmpty(textField1.text))
+        if (string.IsNullOrEmpty(textField1.text) || string.IsNullOrEmpty(textField2.text))
         {
-            Result.text = "Empty field 1";
-        }
-        else if (string.IsNullOrEmpty(textField2.text))
-        {
-            Result.text = "Empty field 2";
-        }
-        else if (value1 < value2)
-        {
-            Result.text = value1.ToString("");
+            Result.text = "Empty field";
         }
         else
         {
-            float.TryParse(textField2.text, out value2);
-            Result.text = value2.ToString("");
+            _value1 = float.Parse(textField1.text);
+            _value2 = float.Parse(textField2.text);
+            Result.text = Mathf.Min(_value1, _value2).ToString("");
         }
     }
     public void FindMax()
+    {
+        if (string.IsNullOrEmpty(textField1.text) || string.IsNullOrEmpty(textField2.text))
         {
-        float.TryParse(textField1.text, out value1);
-        float.TryParse(textField2.text, out value2);
-        if (string.IsNullOrEmpty(textField1.text))
-        {
-            Result.text = "Empty field 1";
-        }
-        else if (string.IsNullOrEmpty(textField2.text))
-        {
-            Result.text = "Empty field 2";
-        }
-        else if (value1 > value2)
-        {
-            Result.text = value1.ToString("");
+            Result.text = "Empty field";
         }
         else
         {
-            float.TryParse(textField2.text, out value2);
-            Result.text = value2.ToString("");
+            _value1 = float.Parse(textField1.text);
+            _value2 = float.Parse(textField2.text);
+            Result.text = Mathf.Max(_value1, _value2).ToString("");
         }
     }
-
-    public void Exponenciate()
+    public void Power()
     {
-        if (string.IsNullOrEmpty(textField1.text))
+        if (string.IsNullOrEmpty(textField1.text) || string.IsNullOrEmpty(textField2.text))
         {
-            Result.text = "Empty field 1";
-        }
-        else if (string.IsNullOrEmpty(textField2.text))
-        {
-            Result.text = "Empty field 2";
+            Result.text = "Empty field";
         }
         else
         {
-            float.TryParse(textField1.text, out value1);
-            float.TryParse(textField2.text, out value2);
-            resultvalue = Mathf.Pow(value1,value2);
-            Result.text = resultvalue.ToString("");
+            _value1 = float.Parse(textField1.text);
+            _value2 = float.Parse(textField2.text);
+            Result.text = Mathf.Pow(_value1, _value2).ToString("");
         }
-    }    
+    }
 }
