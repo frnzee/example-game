@@ -9,15 +9,26 @@ public class Calculator : MonoBehaviour
     public Text CurrentTask;
     private float _value1;
     private float _value2;
+    private float percentvalue;
     private int operationSelector;
     public void AddNumeric(int number)
     {
         Result.text += number;
     }
+    public void Comma()
+    {
+        Result.text += ".";
+    }
     public void Clear()
     {
         Result.text = "";
         CurrentTask.text = "";
+    }
+
+    public void PlusMinus()
+    {
+        _value1 = -(float.Parse(Result.text));
+        Result.text = _value1.ToString();
     }
     public void Addition()
     {
@@ -95,6 +106,47 @@ public class Calculator : MonoBehaviour
         _value1 = float.Parse(Result.text);
         CurrentTask.text = _value1.ToString() + " cotangent";
         Result.text = (1/Mathf.Tan(_value1)).ToString("");
+    }
+    public void PrimesFinder()
+    {
+        _value1 = float.Parse(Result.text);
+        string s = string.Empty;
+        int i, n;
+        n = ((int)_value1);
+        if (n < 2)
+        {
+            Result.text = "wrong value";
+        }
+        else
+        {
+            while ((n % 2) == 0)
+            {
+                n = n / 2;
+                s += "2*";
+            }
+            i = 3;
+            while (i <= Mathf.Sqrt(n))
+            {
+                if ((n % i) == 0)
+                {
+                    if (n / i * i - n == 0)
+                    {
+                        s += i.ToString() + "*";
+                        n = n / i;
+                    }
+                    else
+                    {
+                        i += 2;
+                    }
+                }
+                else
+                {
+                    i += 2;
+                }
+            }
+            s += n.ToString();
+            Result.text = s;
+        }
     }
     public void Equals()
     {

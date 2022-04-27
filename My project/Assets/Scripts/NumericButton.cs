@@ -15,8 +15,7 @@ public class NumericButton : MonoBehaviour
         Six = 6,
         Seven = 7,
         Eight = 8,
-        Nine = 9,
-        Comma = ','
+        Nine = 9
     }
     public NumericType Numeric;
     public Calculator Calculator;
