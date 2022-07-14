@@ -1,19 +1,37 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.EventSystems;
 public class Calculator : MonoBehaviour
 {
     public Text Result;
     public Text CurrentTask;
     private float _value1;
     private float _value2;
-    private float percentvalue;
-    private int operationSelector;
+    private float _result;
+    private enum OperationSelector
+    {
+        Addition,
+        Substaction,
+        Multiplication,
+        Division,
+        FindMin,
+        FindMax,
+        Power
+    }
+    private OperationSelector _myOperation;
+    private bool _needClear = true;
+    private bool _percent = false;
     public void AddNumeric(int number)
     {
-        Result.text += number;
+        if (_needClear)
+        {
+            Result.text = "";
+            Result.text += number;
+            _needClear = false;
+        }
+        else
+        {
+            Result.text += number;
+        }
     }
     public void Comma()
     {
@@ -21,10 +39,10 @@ public class Calculator : MonoBehaviour
     }
     public void Clear()
     {
-        Result.text = "";
+        Result.text = "0";
         CurrentTask.text = "";
+        _needClear = true;
     }
-
     public void PlusMinus()
     {
         _value1 = -(float.Parse(Result.text));
@@ -34,50 +52,50 @@ public class Calculator : MonoBehaviour
     {
         _value1 = float.Parse(Result.text);
         CurrentTask.text = _value1.ToString() + "+";
-        Result.text="";
-        operationSelector = 1;
+        Result.text = "";
+        _myOperation = OperationSelector.Addition;
     }
     public void Substraction()
     {
         _value1 = float.Parse(Result.text);
         CurrentTask.text = _value1.ToString() + "-";
         Result.text = "";
-        operationSelector = 2;
+        _myOperation = OperationSelector.Substaction;
     }
     public void Multiplication()
     {
         _value1 = float.Parse(Result.text);
         CurrentTask.text = _value1.ToString() + "*";
         Result.text = "";
-        operationSelector = 3;
+        _myOperation = OperationSelector.Multiplication;
     }
     public void Division()
     {
         _value1 = float.Parse(Result.text);
         CurrentTask.text = _value1.ToString() + "/";
         Result.text = "";
-        operationSelector = 4;
+        _myOperation = OperationSelector.Division;
     }
     public void FindMin()
     {
         _value1 = float.Parse(Result.text);
-        CurrentTask.text = _value1.ToString() + " min?";
+        CurrentTask.text = "Which one is lesser " + _value1.ToString() + " or";
         Result.text = "";
-        operationSelector = 5;
+        _myOperation = OperationSelector.FindMin;
     }
     public void FindMax()
     {
         _value1 = float.Parse(Result.text);
-        CurrentTask.text = _value1.ToString() + " max?";
+        CurrentTask.text = "Which one is greater " + _value1.ToString() + " or";
         Result.text = "";
-        operationSelector = 6;
+        _myOperation = OperationSelector.FindMax;
     }
     public void Power()
     {
         _value1 = float.Parse(Result.text);
         CurrentTask.text = _value1.ToString() + " pow";
         Result.text = "";
-        operationSelector = 7;
+        _myOperation = OperationSelector.Power;
     }
     public void Logarithm10()
     {
@@ -100,12 +118,14 @@ public class Calculator : MonoBehaviour
         _value1 = float.Parse(Result.text);
         CurrentTask.text = _value1.ToString() + " sinus";
         Result.text = Mathf.Sin(_value1).ToString("");
+        _value1 = Mathf.Sin(_value1);
+        _needClear = true;
     }
     public void Cotangent()
     {
         _value1 = float.Parse(Result.text);
         CurrentTask.text = _value1.ToString() + " cotangent";
-        Result.text = (1/Mathf.Tan(_value1)).ToString("");
+        Result.text = (1 / Mathf.Tan(_value1)).ToString("");
     }
     public void PrimesFinder()
     {
@@ -116,12 +136,13 @@ public class Calculator : MonoBehaviour
         if (n < 2)
         {
             Result.text = "wrong value";
+            _needClear = true;
         }
         else
         {
             while ((n % 2) == 0)
             {
-                n = n / 2;
+                n /= 2;
                 s += "2*";
             }
             i = 3;
@@ -132,7 +153,7 @@ public class Calculator : MonoBehaviour
                     if (n / i * i - n == 0)
                     {
                         s += i.ToString() + "*";
-                        n = n / i;
+                        n /= i;
                     }
                     else
                     {
@@ -148,52 +169,94 @@ public class Calculator : MonoBehaviour
             Result.text = s;
         }
     }
+    public void Percent()
+    {
+        CurrentTask.text += float.Parse(Result.text) + "%";
+        _value2 = float.Parse(Result.text);
+        Result.text = "";
+        _percent = true;
+    }
     public void Equals()
     {
-        switch (operationSelector)
+        if (_percent)
         {
-            case 1:
-                _value2 = _value1 + float.Parse(Result.text);
-                Result.text = _value2.ToString("");
-                CurrentTask.text = "";
-                break;
-            case 2:
-                _value2 = _value1 - float.Parse(Result.text);
-                Result.text = _value2.ToString("");
-                CurrentTask.text = "";
-                break;
-            case 3:
-                _value2 = _value1 * float.Parse(Result.text);
-                Result.text = _value2.ToString("");
-                CurrentTask.text = "";
-                break;
-            case 4:
-                if (Result.text == "0")
-                {
-                    Result.text = "Can't divide by 0";
-                }
-                else
-                {
-                    _value2 = _value1 / float.Parse(Result.text);
-                    Result.text = _value2.ToString("");
+            switch (_myOperation)
+            {
+                case OperationSelector.Addition:
+                    _result = _value1 + (_value1 * (_value2) / 100);
+                    Result.text = _result.ToString("");
                     CurrentTask.text = "";
-                }
-                break;
-            case 5:
-                _value2 = float.Parse(Result.text);
-                Result.text = "Min is "+ Mathf.Min(_value1, _value2).ToString("");
-                CurrentTask.text = "";
-                break;
-            case 6:
-                _value2 = float.Parse(Result.text);
-                Result.text = "Max is " + Mathf.Max(_value1, _value2).ToString("");
-                CurrentTask.text = "";
-                break;
-            case 7:
-                _value2 = float.Parse(Result.text);
-                Result.text = Mathf.Pow(_value1, _value2).ToString("");
-                CurrentTask.text = "";
-                break;
+                    break;
+                case OperationSelector.Substaction:
+                    _result = _value1 - (_value1 * (_value2) / 100);
+                    Result.text = _result.ToString("");
+                    CurrentTask.text = "";
+                    break;
+                case OperationSelector.Multiplication:
+                    _result = _value1 * (_value1 * (_value2) / 100);
+                    Result.text = _result.ToString("");
+                    CurrentTask.text = "";
+                    break;
+                case OperationSelector.Division:
+                    _result = _value1 / (_value1 * (_value2) / 100);
+                    Result.text = _result.ToString("");
+                    CurrentTask.text = "";
+                    break;
+            }
+            _percent = false;
+        }
+        else
+        {
+            switch (_myOperation)
+            {
+                case OperationSelector.Addition:
+                    _result = _value1 + float.Parse(Result.text);
+                    Result.text = _result.ToString("");
+                    CurrentTask.text = "";
+                    break;
+                case OperationSelector.Substaction:
+                    _result = _value1 - float.Parse(Result.text);
+                    Result.text = _result.ToString("");
+                    CurrentTask.text = "";
+                    break;
+                case OperationSelector.Multiplication:
+                    _result = _value1 * float.Parse(Result.text);
+                    Result.text = _result.ToString("");
+                    CurrentTask.text = "";
+                    break;
+                case OperationSelector.Division:
+                    if (Result.text == "0")
+                    {
+                        Result.text = "Can't divide by 0";
+                        _needClear = true;
+                    }
+                    else
+                    {
+                        _result = _value1 / float.Parse(Result.text);
+                        Result.text = _result.ToString("");
+                        CurrentTask.text = "";
+                    }
+                    break;
+                case OperationSelector.FindMin:
+                    _result = float.Parse(Result.text);
+                    Result.text = Mathf.Min(_value1, _result).ToString("") + " is lesser";
+                    CurrentTask.text = "";
+                    _needClear = true;
+                    break;
+                case OperationSelector.FindMax:
+                    _result = float.Parse(Result.text);
+                    Result.text = Mathf.Max(_value1, _result).ToString("") + " is greater";
+                    CurrentTask.text = "";
+                    _needClear = true;
+                    break;
+                case OperationSelector.Power:
+                    _result = float.Parse(Result.text);
+                    Result.text = Mathf.Pow(_value1, _result).ToString("");
+                    CurrentTask.text = Result.text;
+                    _value1 = Mathf.Pow(_value1, _result);
+                    _needClear = true;
+                    break;
+            }
         }
     }
 }
